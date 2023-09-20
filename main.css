@@ -126,7 +126,7 @@ nav div > h3 {
 
 .inner-container {
     width: 100%;
-    height: calc(100vh - 150px);
+    height: 100vh;
     position: relative;
     padding: 0 5%;
     display: flex;
