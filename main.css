@@ -26,32 +26,47 @@ nav {
     position: relative;
 
 }
-nav h1{
-    font-family: 'Luckiest Guy';
-
-    font-weight: 400;
-    font-size: min(40px, 10vmin);
-
-    color: #000000;
-}
-nav ul{
-    width: 50%;
+nav {
     display: flex;
-    gap: 5%;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Adjusted height */
+    width: 100%;
+    padding: 0 20px; /* Increased padding */
+    position: relative; /* Fixed position for a sticky navbar */
+    z-index: 100; /* Ensure it's above other content */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
-nav ul li{
-    display: inline-block;
-    margin: 0 10px;
-    flex-basis: 1;
-}
-nav ul li a{
-    text-decoration: none;
-    font-family: 'Lato';
-    font-style: normal;
+nav h1 {
+    font-family: 'Luckiest Guy';
     font-weight: 400;
-    font-size: min(24px, 4vmin);    
-    line-height: 29px;
-    color: #000000;
+    font-size: min(36px, 4vmin); /* Slightly smaller font size */
+    color: black; /* White text color */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Increased gap */
+}
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; /* Bolder text */
+    font-size: min(18px, 3vmin); /* Smaller font size */
+    line-height: 24px; /* Adjusted line height */
+    color: black; /* White text color */
+    transition: color 0.3s; /* Add a color transition on hover */
+}
+
+nav ul li a:hover {
+    color: #FFA500; /* Change color on hover (e.g., orange) */
 }
 nav div {
     display: flex;
@@ -145,6 +160,7 @@ nav div > h3 {
     border-radius: 25px;
     padding: 4%;
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .inner-container div > h1{
     font-family: 'Montserrat';
@@ -194,7 +210,7 @@ nav div > h3 {
     justify-content: center;
     z-index: 5;
     color: rgb(232, 170, 66);
-    transition: 1s ease all;
+    transition: all .1s linear;
     
 }
 button:hover > .cover{
@@ -496,7 +512,7 @@ button:hover > .cover{
 /* Testimonials */
 .testimonials-section {
     width: 100%;
-    height: max-content;
+    min-height: 100vh;
     padding: 5%;
     display: flex;
     align-items: center;
@@ -504,7 +520,7 @@ button:hover > .cover{
 } 
 .testimonials {
     width: 100%;
-    height: 1024px;
+    height: 50%;
     border: 3px solid #1F4690;
     display: flex;
     align-items: center;
@@ -631,6 +647,48 @@ button:hover > .cover{
     
     color: #000000;
 }
+.end {
+    color: #2B2B2C;
+    min-height: 50vh;
+    width: 100%;
+
+    display: flex;
+    gap: 2%;
+    padding: 5%;
+    overflow: hidden;
+}
+
+footer {
+    color: black;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.end ul {
+    flex-basis: 25%;
+    list-style: none;
+    height: 100%;
+  }
+.end li {
+    display: block;
+    padding: 10px;
+    
+    margin-bottom: 10px;
+  }
+  .end ul li:nth-child(1) {
+
+    margin-bottom: 5px;
+  }
+
+  .end li:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 
 @keyframes arrow {
     0% {
@@ -729,11 +787,28 @@ button:hover > .cover{
         flex-direction: column;
         width: 100%;
     }
+    
+    .end {
+        flex-direction: column;
+    }
+    
+
+.end li {
+    display: block;
+    padding: 10px;
+    
+    margin-bottom: .7em;
+  }
+
+  .end li:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 
 }   
 
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 800px) {
     .top-products {
         width: 100%;
         height:800px;
@@ -765,7 +840,7 @@ button:hover > .cover{
     
 
     .card > button {
-        border: 2px solid #817C7C;
+        border: 1px solid #817C7C;
         width: min(169px, 100% - 50px);
         height: 30px;
         font-size: min(20px, 3vmin);
@@ -783,11 +858,7 @@ button:hover > .cover{
     .viewed {
         height: max-content;
     }
-    .testimonials {
 
-        height: 1504px;
-
-    }
     .testimony {
         width: 100%;
         height: 600px;
